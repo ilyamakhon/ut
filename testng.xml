@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Triangle test suite">
-    <test name="Triangle type test group">
+    <test name="Triangle checker test group">
         <groups>
             <run>
-                <include name="tst_triangle_type"/>
+                <include name="tst_triangle_checker"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.ut.TriangleTest" />
+        </classes>
+    </test>
+    <test name="Triangle detector test group">
+        <groups>
+            <run>
+                <include name="tst_triangle_detector"/>
             </run>
         </groups>
         <classes>
