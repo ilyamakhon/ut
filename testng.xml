@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Triangle test suite">
+    <test name="Triangle type test group">
+        <groups>
+            <run>
+                <include name="tst_triangle_type"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.ut.TriangleTest" />
+        </classes>
+    </test>
+</suite>
