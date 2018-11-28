@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Triangle test suite">
-    <test name="Triangle checker test group">
+    <test name="Triangle checker positive test group">
         <groups>
             <run>
-                <include name="tst_triangle_checker"/>
+                <include name="tst_triangle_checker_positive_group"/>
             </run>
         </groups>
         <classes>
             <class name="com.epam.ut.TriangleTest" />
         </classes>
     </test>
-    <test name="Triangle detector test group">
+    <test name="Triangle checker negative test group">
         <groups>
             <run>
-                <include name="tst_triangle_detector"/>
+                <include name="tst_triangle_checker_negative_group"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.ut.TriangleTest" />
+        </classes>
+    </test>
+    <test name="Triangle detector positive test group">
+        <groups>
+            <run>
+                <include name="tst_triangle_detector_positive_group"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.ut.TriangleTest" />
+        </classes>
+    </test>
+    <test name="Triangle detector negative test group">
+        <groups>
+            <run>
+                <include name="tst_triangle_detector_negative_group"/>
             </run>
         </groups>
         <classes>
