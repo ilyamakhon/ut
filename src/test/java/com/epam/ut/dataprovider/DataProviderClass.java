@@ -11,44 +11,6 @@ public class DataProviderClass {
     public Object[][] dataProvider(Method method)
     {
         switch (method.getName()) {
-            //----------------TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | POSITIVE TESTS
-            case "tst_positive_equilateral_triangle" :
-                return new Object[][] {{ new Triangle(2,2,2), 1 }};
-
-            case "tst_positive_isosceles_triangle" :
-                return new Object[][] {{ new Triangle(10, 100, 100), 2 }};
-
-            case "tst_positive_ordinary_triangle" :
-                return new Object[][] {{ new Triangle(10, 6, 5), 4 }};
-
-            case "tst_positive_rectangular_triangle" :
-                return new Object[][] {{ new Triangle(3, 4, 5), 8 }};
-            //++++++++++++++++TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | POSITIVE TESTS
-
-            //----------------TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | NEGATIVE TESTS
-            case "tst_negative_sides_triangle" :
-                return new Object[][] {
-                        {new Triangle(-2.5,-2.5,-2.5)},
-                        {new Triangle(2,-2,-2)},
-                        {new Triangle(-2,2,-2)},
-                        {new Triangle(-2,-2,2)},
-
-                        {new Triangle(-10, -100, -100)},
-                        {new Triangle(10, -100.9, -100.9)},
-                        {new Triangle(-10, 100, -100)},
-                        {new Triangle(-10, -100, 100)},
-
-                        {new Triangle(-10, -6, -5)},
-                        {new Triangle(10, -6, -5)},
-                        {new Triangle(-10, 6, -5)},
-                        {new Triangle(-10, -6, 5)},
-
-                        {new Triangle(-3, -4, -5)},
-                        {new Triangle(3, -4, -5)},
-                        {new Triangle(-3, 4, -5)},
-                        {new Triangle(-3, -4, 5)}};
-            //++++++++++++++++TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | NEGATIVE TESTS
-
             //----------------TEST DATA FOR TRIANGLE CHECKER TEST GROUP | POSITIVE TESTS
             case "tst_all_positive_sides_handling" :
                 return new Object[][] { {new Triangle(3, 4, 5)} };
@@ -86,6 +48,50 @@ public class DataProviderClass {
                 return new Object[][] { {new Triangle(10, 4, 4)} };
             //++++++++++++++++TEST DATA FOR TRIANGLE CHECKER TEST GROUP | NEGATIVE TESTS
 
+            //----------------TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | POSITIVE TESTS
+            case "tst_equilateral_triangle_detection" :
+                return new Object[][] {{ new Triangle(2,2,2), 1 }};
+
+            case "tst_isosceles_triangle_detection" :
+                return new Object[][] {{ new Triangle(10, 100, 100), 2 }};
+
+            case "tst_ordinary_triangle_detection" :
+                return new Object[][] {{ new Triangle(10, 6, 5), 4 }};
+
+            case "tst_rectangular_triangle_detection" :
+                return new Object[][] {{ new Triangle(3, 4, 5), 8 }};
+
+            case "tst_mixed_triangle_types_detection" :
+                return new Object[][] {
+                        { new Triangle(8, 8, 8), 3 },// равнобедренный - частный случай равнобедренного
+                        { new Triangle(14.14, 10, 10), 3 }//равнобедренный прямоугольный треугольник
+                };
+
+            //++++++++++++++++TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | POSITIVE TESTS
+
+            //----------------TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | NEGATIVE TESTS
+            case "tst_negative_sides_triangle" :
+                return new Object[][] {
+                        {new Triangle(-2.5,-2.5,-2.5)},
+                        {new Triangle(2,-2,-2)},
+                        {new Triangle(-2,2,-2)},
+                        {new Triangle(-2,-2,2)},
+
+                        {new Triangle(-10, -100, -100)},
+                        {new Triangle(10, -100.9, -100.9)},
+                        {new Triangle(-10, 100, -100)},
+                        {new Triangle(-10, -100, 100)},
+
+                        {new Triangle(-10, -6, -5)},
+                        {new Triangle(10, -6, -5)},
+                        {new Triangle(-10, 6, -5)},
+                        {new Triangle(-10, -6, 5)},
+
+                        {new Triangle(-3, -4, -5)},
+                        {new Triangle(3, -4, -5)},
+                        {new Triangle(-3, 4, -5)},
+                        {new Triangle(-3, -4, 5)}};
+            //++++++++++++++++TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | NEGATIVE TESTS
 
             //----------------TEST TRIANGLE BASICS GROUP | POSITIVE TESTS
             case "tst_constructor" :

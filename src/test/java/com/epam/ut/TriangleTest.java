@@ -9,8 +9,6 @@ public class TriangleTest {
 
     private boolean isTriangle;
 
-
-
     //----------------------TEST TRIANGLE CHECKER GROUP
 
     //-----------POSITIVE TESTS
@@ -90,30 +88,35 @@ public class TriangleTest {
 
     //-----------POSITIVE TESTS
     @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class, groups = {"tst_triangle_detector_positive_group"})
-    public void tst_positive_equilateral_triangle(Triangle equilateralTriangle, int expectedEquilateral) {
+    public void tst_equilateral_triangle_detection(Triangle equilateralTriangle, int expectedEquilateral) {
         Assert.assertEquals(equilateralTriangle.detectTriangle(), expectedEquilateral);
     }
 
     @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class, groups = {"tst_triangle_detector_positive_group"})
-    public void tst_positive_isosceles_triangle(Triangle isoscelesTriangle, int expectedIsosceles) {
+    public void tst_isosceles_triangle_detection(Triangle isoscelesTriangle, int expectedIsosceles) {
         Assert.assertEquals(isoscelesTriangle.detectTriangle(), expectedIsosceles);
     }
     
     @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class, groups = {"tst_triangle_detector_positive_group"})
-    public void tst_positive_ordinary_triangle(Triangle ordinaryTriangle, int expectedOrdinary) {
+    public void tst_ordinary_triangle_detection(Triangle ordinaryTriangle, int expectedOrdinary) {
         Assert.assertEquals(ordinaryTriangle.detectTriangle(), expectedOrdinary);
     }
 
     @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class, groups = {"tst_triangle_detector_positive_group"})
-    public void tst_positive_rectangular_triangle(Triangle rectangularTriangle, int expectedRectangular) {
+    public void tst_rectangular_triangle_detection(Triangle rectangularTriangle, int expectedRectangular) {
         Assert.assertEquals(rectangularTriangle.detectTriangle(), expectedRectangular);
+    }
+
+    @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class, groups = {"tst_triangle_detector_positive_group"})
+    public void tst_mixed_triangle_types_detection(Triangle mixedTypeTriangle, int expectedMixedType) {
+        Assert.assertEquals(mixedTypeTriangle.detectTriangle(), expectedMixedType);
     }
     //+++++++++++POSITIVE TESTS
 
     //-----------NEGATIVE TESTS
     @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class, groups = {"tst_triangle_detector_negative_group"}, expectedExceptions = Exception.class)
-    public void tst_negative_sides_triangle(Triangle equilateralTriangle) {
-        equilateralTriangle.detectTriangle();
+    public void tst_negative_sides_triangle(Triangle triangle) {
+        triangle.detectTriangle();
     }
     //+++++++++++NEGATIVE TESTS
 
