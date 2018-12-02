@@ -70,7 +70,7 @@ public class DataProviderClass {
             //++++++++++++++++TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | POSITIVE TESTS
 
             //----------------TEST DATA FOR TRIANGLE DETECTOR TEST GROUP | NEGATIVE TESTS
-            case "tst_negative_sides_triangle" :
+            case "tst_negative_sides_triangle_handling" :
                 return new Object[][] {
                         {new Triangle(-2.5,-2.5,-2.5)},
                         {new Triangle(2,-2,-2)},

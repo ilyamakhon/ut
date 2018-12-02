@@ -115,7 +115,7 @@ public class TriangleTest {
 
     //-----------NEGATIVE TESTS
     @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class, groups = {"tst_triangle_detector_negative_group"}, expectedExceptions = Exception.class)
-    public void tst_negative_sides_triangle(Triangle triangle) {
+    public void tst_negative_sides_triangle_handling(Triangle triangle) {
         triangle.detectTriangle();
     }
     //+++++++++++NEGATIVE TESTS
@@ -140,7 +140,6 @@ public class TriangleTest {
 
     @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class, groups = {"tst_triangle_basics_positive_group"})
     public void tst_get_message(String actualMessage, String expectedMessage) {
-        System.out.println(expectedMessage);
         Assert.assertEquals(actualMessage, expectedMessage);
     }
     //+++++++++++POSITIVE TESTS
